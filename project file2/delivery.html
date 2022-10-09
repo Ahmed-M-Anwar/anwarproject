@@ -1,0 +1,707 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+      <!--first mobile meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <title>Delivery</title>
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" rel="stylesheet">
+      
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+  padding: 4px;
+  background-color: #222222;
+  border-radius: 10px;
+}
+.datepicker table {
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.datepicker table tr td,
+.datepicker table tr th {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+}
+
+.datepicker table tr td.day:hover,
+.datepicker table tr td.focused {
+  background: #555555;
+  cursor: pointer;
+}
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+  color: #FF8000;
+}
+
+.datepicker table tr td.today {
+  color: #000000;
+  background-color: #FFA953;
+  border-color: #FFB76F;
+}
+.datepicker table tr td.today:hover {
+  color: #FFFFFF;
+  background-color: #884400;
+  border-color: #f59e00;
+}
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.open > .dropdown-toggle.datepicker table tr td.active,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+  color: #ffffff;
+  background-color: #419841;
+  border-color: #285e8e;
+}
+
+
+.datepicker table tr td.active:active:hover,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active:hover,
+.open > .dropdown-toggle.datepicker table tr td.active:hover,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.open > .dropdown-toggle.datepicker table tr td.active:focus,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active:active.focus,
+.datepicker table tr td.active.highlighted:active.focus,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.highlighted.active.focus,
+.open > .dropdown-toggle.datepicker table tr td.active.focus,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+  color: #ffffff;
+  background-color: #285e8e;
+  border-color: #193c5a;
+}
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.open > .dropdown-toggle.datepicker table tr td.active,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+  color: #ffffff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+.datepicker table tr td.active:active:hover,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active:hover,
+.open > .dropdown-toggle.datepicker table tr td.active:hover,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.open > .dropdown-toggle.datepicker table tr td.active:focus,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+.datepicker table tr td.active:active.focus,
+.datepicker table tr td.active.highlighted:active.focus,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.highlighted.active.focus,
+.open > .dropdown-toggle.datepicker table tr td.active.focus,
+.open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+  color: #ffffff;
+  background-color: #285e8e;
+  border-color: #193c5a;
+}
+.datepicker .datepicker-switch {
+  width: 145px;
+  
+}
+.datepicker .datepicker-switch:hover,
+.datepicker .prev:hover,
+.datepicker .next:hover,
+.datepicker tfoot tr th:hover {
+  background: #50A2C9;
+}
+</style>
+  </head>
+   
+  <body>
+      
+   
+       <!---start nav---->
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><SPAN style="font-size:32px;font-family: 'Oleo Script', cursive;">EHGIZ </SPAN>.<span style="color:#E41b17; font-weight:bold;font-family: 'Oleo Script', cursive;">Online</span></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="registration/Register.html">Register</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="T_reservation.html">table reservation</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="Rest_Menu.html">View available Resturant</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="RRegister.html">Add Resturant</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+      
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+       <!------end nav---->
+     <!----------start reservation---------------> 
+     
+      <section class="reservation text-center">
+          <div class="data">
+              <div class="container">
+                  <div class="found_table">
+                  <h1>Find your table for any restaurant</h1>
+       <!--------form--->     
+     <form class="form-inline">
+       <div class="row">
+           
+           <div class="col-sm-5 form-group input-group">
+               
+    <select id="country" onchange="ref();" class="form-control" name="country" placeholder="Select your Current Country">
+        <option selected disabled>Select your Current country</option>
+        <option>Dakahlia</option>
+        <option>Cairo</option>
+        <option>Alexandria</option>
+        <option>Sharqia</option>
+        <option>Giza</option>
+        <option>Aswan</option>
+        <option>Asyut</option>
+        <option>Beheira</option>
+        <option>Beni Suef</option>
+        <option>Damietta</option>
+        <option>Faiyum</option>
+        <option>Gharbia</option>
+        <option>Ismailia</option>
+        <option>Kafr El Sheikh</option>
+        <option>Luxor</option>
+        <option>Matrouh</option>
+        <option>Minya</option>
+        <option>Monufia</option>
+        <option>New Valley</option>
+        <option>North Sinai</option>
+        <option>Port Said</option>
+        <option>Qalyubia</option>
+        <option>Qena</option>
+        <option>Red Sea</option>
+        <option>Sohag</option>
+        <option>South Sinai</option>
+        <option>Suez</option>
+        
+      </select>
+     <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-map-marker"></span>
+            </div>
+     </div>
+           
+           <div class="col-sm-5 form-group input-group">
+    <select id="area" class="form-control" name="Area" placeholder="Select your Current Area" disabled>
+                <option selected disabled>Select your Current Area</option>
+                <optgroup label="Dakahlia" style="display: none;">
+                    <option value="Aga">El Mansoura</option>
+                    <option value="Aga">Aga</option>
+                    <option value="El Gamaliya">El Gamaliya</option>
+                    <option value="El Senbellawein">El Senbellawein</option>
+                    <option value="Mit Ghamr">Mit Ghamr</option>
+                    <option value="El Matareya">El Matareya</option>
+                    <option value="Belqas">Belqas</option>
+                    <option value="Dikirnis">Dikirnis</option>
+                    <option value="El Manzala">El Manzala</option>
+                    <option value="Talkha">Talkha</option>
+                    <option value="El Gamaliya">El Gamaliya</option>
+                    <option value="Minyet El Nasr">Minyet El Nasr</option>
+                    <option value="Shirbin">Shirbin</option>
+                    <option value="Timay El Imdid">Timay El Imdid</option>
+                    <option value="Mit Salsil">Mit Salsil</option>
+                    <option value="Beni Ebeid">Beni Ebeid</option>
+                    <option value="Nabaroh">Nabaroh</option>
+                    <option value="Gamasa">Gamasa</option>
+                </optgroup>
+                    <optgroup label="Cairo" style="display: none;">
+                    <option value="El Manial">El Manial</option>
+                    <option value="El Marg">El Marg</option>
+                    <option value="El Matareya">El Matareya</option>
+                    <option value="El Qobbah">El Qobbah</option>
+                    <option value="El Rehab">El Rehab</option>
+                    <option value="Abbassia">Abbassia</option>
+                    <option value="Ain Shams">Ain Shams</option>
+                    <option value="Azbakeya">Azbakeya</option>
+                    <option value="Maadi">Maadi</option>
+                    <option value="Old Cairo">Old Cairo</option>
+                    <option value="Shubra El Kheima">Shubra El Kheima</option>
+                    <option value="Zamalek">Zamalek</option>
+                    <option value="Bab al-Louq">Bab al-Louq</option>
+                    <option value="Fustat">Fustat</option>
+                    <option value="Heliopolis">Heliopolis</option>
+                    <option value="Helwan">Helwan</option>
+                    <option value="El Rawda">El Rawda</option>
+                    <option value="Fifth Settlement">Fifth Settlement</option>
+                    <option value="El Salam">El Salam</option>
+                    <option value="Abdeen">Abdeen</option>
+                    <option value="El Basatin">El Basatin</option>
+                    <option value="El Nozha">El Nozha</option>
+                    <option value="Rod El Farag">Rod El Farag</option>
+                </optgroup>
+                <optgroup label="Alexandria" style="display: none;">
+                    <option value="Elmontazah">Elmontazah</option>
+                    <option value="Al Gomrok">Al Gomrok</option>
+                    <option value="Al Amreya">Al Amreya</option>
+                    <option value="Al Agamy">Al Agamy</option>
+                    <option value="Borg Al Arab">Borg Al Arab</option>
+                    <option value="El Raml">El Raml</option>
+                    <option value="Bab Sharqi">Bab Sharqi</option>
+                    <option value="Karmouz">Karmouz</option>
+                    <option value="Moharam Bek">Moharam Bek</option>
+                    <option value="Dekhela">Dekhela</option>
+                    <option value="Mansheya">Mansheya</option>
+                    <option value="Labban">Labban</option>
+                    <option value="Ataren">Ataren</option>
+                    <option value="Sidi Gaber">Sidi Gaber</option>
+                </optgroup>
+                <optgroup label="Sharqia" style="display: none;">
+                    <option value="Abu Hammad">Abu Hammad</option>
+                    <option value="Abu Kebir">Abu Kebir</option>
+                    <option value="El Husseiniya">El Husseiniya</option>
+                    <option value="El Ibrahimiya">El Ibrahimiya<option>
+                    <option value="El Qanayat">El Qanayat</option>
+                    <option value="El Qurein">El Qurein</option>
+                    <option value="Awlad Saqr">Awlad Saqr</option>
+                    <option value="Bilbeis">Bilbeis</option>
+                    <option value="Diyarb Negm">Diyarb Negm</option>
+                    <option value="Faqous">Faqous</option>
+                    <option value="Hihya">Hihya</option>
+                    <option value="Kafr Saqr">Kafr Saqr</option>
+                    <option value="10th of Ramadan City">10th of Ramadan City</option>
+                    <option value="Minya El Qamh">Minya El Qamh</option>
+                </optgroup>
+                <optgroup label="Giza" style="display: none;">
+                    <option value="Dokki">Dokki</option>
+                    <option value="Pyramids">Pyramids</option>
+                    <option value="Agouza">Agouza</option>
+                    <option value="El Ayyatya">El Ayyat</option>
+                    <option value="El Badrashein">El Badrashein</option>
+                    <option value="El Hawamdeya">El Hawamdeya</option>
+                    <option value="Giza">Giza</option>
+                    <option value="El Omraniya">El Omraniya</option>
+                    <option value="El Warraq">El Warraq</option>
+                    <option value="Sheikh Zayed City">Sheikh Zayed City</option>
+                    <option value="Al Talbia">Al Talbia</option>
+                    <option value="Ossim">Ossim</option>
+                    <option value="Imbaba">Imbaba</option>
+                    <option value="Kerdasa">Kerdasa</option>
+                    <option value="6th of October City">6th of October City</option>
+                    <option value="Bulaq">Bulaq</option>
+                </optgroup>
+                <optgroup label="Aswan" style="display: none;">
+                    <option value="Abu Simbel">Abu Simbel</option>
+                    <option value="Aswan">Aswan</option>
+                    <option value="Daraw">Daraw</option>
+                    <option value="Edfu">Edfu<option>
+                    <option value="Kom Ombo">Kom Ombo</option>
+                    <option value="New Aswan">New Aswan</option>
+                    <option value="New Tushka">New Tushka</option>
+                    <option value="Nasser City">Nasser City</option>
+                </optgroup>
+                <optgroup label="Asyut" style="display: none;">
+                    <option value="Abnub">Abnub</option>
+                    <option value="Abu Tig">Abu Tig</option>
+                    <option value="El Badari">El Badari</option>
+                    <option value="El Fath">El Fath</option>
+                    <option value="El Ghanayem">El Ghanayem</option>
+                    <option value="El Qusiya">El Qusiya</option>
+                    <option value="Asyut">Asyut</option>
+                    <option value="Dairut">Dairut</option>
+                    <option value="New Asyut">New Asyut</option>
+                    <option value="Manfalut">Manfalut</option>
+                    <option value="Sahel Selim">Sahel Selim</option>
+                    <option value="Sodfa">Sodfa</option>
+                </optgroup>
+                <optgroup label="Beheira" style="display: none;">
+                    <option value="Abu El Matamir">Abu El Matamir</option>
+                    <option value="Abu Hummus">Abu Hummus</option>
+                    <option value="El Delengat">El Delengat</option>
+                    <option value="Mahmoudiyah">Mahmoudiyah<option>
+                    <option value="Rahmaniya">Rahmaniya</option>
+                    <option value="Badr">Badr</option>
+                    <option value="Damanhour">Damanhour</option>
+                    <option value="West Nubariyah">West Nubariyah</option>
+                    <option value="Hosh Essa">Hosh Essa</option>
+                    <option value="Edku">Edku</option>
+                    <option value="Itay El Barud">Itay El Barud</option>
+                    <option value="Kafr El Dawwar">Kafr El Dawwar</option>
+                    <option value="Kom Hamada">Kom Hamada</option>
+                    <option value="Rosetta">Rosetta</option>
+                    <option value="Shubrakhit">Shubrakhit</option>
+                    <option value="Natrn Valley">Natrn Valley</option>
+                </optgroup>
+                <optgroup label="Beni Suef" style="display: none;">
+                    <option value="El Fashn">El Fashn</option>
+                    <option value="El Wasta">El Wasta</option>
+                    <option value="Beni Suef">Beni Suef</option>
+                    <option value="Biba">Biba<option>
+                    <option value="Ihnasiya">Ihnasiya</option>
+                    <option value="New Beni Suef">New Beni Suef</option>
+                    <option value="Nasser">Nasser</option>
+                    <option value="Sumusta El Waqf">Sumusta El Waqf</option>
+                </optgroup>
+                <optgroup label="Damietta" style="display: none;">
+                    <option value="El Zarqa">El Zarqa</option>
+                    <option value="Damietta">Damietta</option>
+                    <option value="Faraskur">Faraskur</option>
+                    <option value="Kafr El Batik">Kafr El Batik<option>
+                    <option value="Kafr Saad">Kafr Saad</option>
+                    <option value="New Damietta">New Damietta</option>
+                    <option value="Ras El Bar">Ras El Bar</option>
+                </optgroup>
+                <optgroup label="Faiyum" style="display: none;">
+                    <option value="Faiyum">Faiyum</option>
+                    <option value="Ibsheway">Ibsheway</option>
+                    <option value="Itsa">Itsa</option>
+                    <option value="New Faiyum">New Faiyum<option>
+                    <option value="Sinnuris">Sinnuris</option>
+                    <option value="Tamiya">Tamiya</option>
+                    <option value="Yousef El Seddik">Yousef El Seddik</option>
+                </optgroup>
+                <optgroup label="Gharbia" style="display: none;">
+                    <option value="El Mahalla El Kubra">El Mahalla El Kubra</option>
+                    <option value="El Santa">El Santa</option>
+                    <option value="Basyoun">Basyoun</option>
+                    <option value="Kafr El Zayat">Kafr El Zayat<option>
+                    <option value="Kotoor">Kotoor</option>
+                    <option value="Samanoud">Samanoud</option>
+                    <option value="Tanta">Tanta</option>
+                    <option value="Zefta">Zefta</option>
+                </optgroup>
+                <optgroup label="Ismailia" style="display: none;">
+                    <option value="Abu Suwir">Abu Suwir</option>
+                    <option value="Ismalia">Ismalia</option>
+                    <option value="El Qantara">El Qantara</option>
+                    <option value="El Qantara El Sharqiya">El Qantara El Sharqiya<option>
+                    <option value="New Kasaseen">New Kasaseen</option>
+                    <option value="Tell El Kebir">Tell El Kebir</option>
+                    <option value="Fayid">Fayid</option>
+                </optgroup>
+                <optgroup label="Kafr El Sheikh" style="display: none;">
+                    <option value="Burullus">Burullus</option>
+                    <option value="El Hamool">El Hamool</option>
+                    <option value="El Reyad">El Reyad</option>
+                    <option value="Bila">Bila<option>
+                    <option value="Desouk">Desouk</option>
+                    <option value="Fuwa">Fuwa</option>
+                    <option value="Kafr el Sheikh">Kafr el Sheikh</option>
+                    <option value="Metoubes">Metoubes</option>
+                    <option value="Qallin">Qallin</option>
+                    <option value="Sidi Salem">Sidi Salem</option>
+                </optgroup>
+                <optgroup label="Luxor" style="display: none;">
+                    <option value="Qurna">Qurna</option>
+                    <option value="Luxor">Luxor</option>
+                    <option value="Armant">Armant</option>
+                    <option value="Esna">Esna<option>
+                    <option value="Tiba">Tiba</option>
+                </optgroup>
+                <optgroup label="Matrouh" style="display: none;">
+                    <option value="El Dabaa">El Dabaa</option>
+                    <option value="El Alamein">El Alamein</option>
+                    <option value="El Hamam">El Hamam</option>
+                    <option value="El Negaila">El Negaila<option>
+                    <option value="North Coast">North Coast</option>
+                    <option value="Sallum">Sallum</option>
+                    <option value="Mersa Matruh">Mersa Matruh</option>
+                    <option value="Sidi Barrani">Sidi Barrani</option>
+                    <option value="Siwa Oasis">Siwa Oasis</option>
+                </optgroup>
+                <optgroup label="Minya" style="display: none;">
+                    <option value="Abu Qirqas">Abu Qirqas</option>
+                    <option value="El Idwa">El Idwa</option>
+                    <option value="Minya">Minya</option>
+                    <option value="New Minya">New Minya<option>
+                    <option value="Beni Mazar">Beni Mazar</option>
+                    <option value="Deir Mawas">Deir Mawas</option>
+                    <option value="Maghagha">Maghagha</option>
+                    <option value="Mallawi">Mallawi</option>
+                    <option value="Matai">Matai</option>
+                    <option value="Samalut">Samalut</option>
+                </optgroup>
+                <optgroup label="Monufia" style="display: none;">
+                    <option value="El Bagour">El Bagour</option>
+                    <option value="Ashmoun">Ashmoun</option>
+                    <option value="El Shohada">El Shohada</option>
+                    <option value="Birket el Sab">Birket el Sab<option>
+                    <option value="Sadat City">Sadat City</option>
+                    <option value="Menouf">Menouf</option>
+                    <option value="Quweisna">Quweisna</option>
+                    <option value="Shibin el Kom">Shibin el Kom</option>
+                    <option value="Sers El Lyan">Sers El Lyan</option>
+                    <option value="Tala">Tala</option>
+                </optgroup>
+                <optgroup label="New Valley" style="display: none;">
+                    <option value="Kharga">Kharga</option>
+                    <option value="Balat">Balat</option>
+                    <option value="Dakhla">Dakhla</option>
+                    <option value="Farafra">Farafra<option>
+                    <option value="Baris">Baris</option>
+                </optgroup>
+                <optgroup label="North Sinai" style="display: none;">
+                    <option value="El Arish">El Arish</option>
+                    <option value="El Hassana">El Hassana</option>
+                    <option value="Sheikh Zuweid">Sheikh Zuweid</option>
+                    <option value="Bir El Abd">Bir El Abd<option>
+                    <option value="Nakhl">Nakhl</option>
+                    <option value="Rafah">Rafah</option>
+                    <option value="Shurtet El Qasima">Shurtet El Qasima</option>
+                    <option value="Shurtet Rumana">Shurtet Rumana</option>
+                </optgroup>
+                <optgroup label="Port Said" style="display: none;">
+                    <option value="El Dawahy">El Dawahy</option>
+                    <option value="El Arab">El Arab</option>
+                    <option value="El Ganoub">El Ganoub</option>
+                    <option value="El Manakh">El Manakh<option>
+                    <option value="El Manasra">El Manasra</option>
+                    <option value="El Sharq">El Sharq</option>
+                    <option value="El Zohur">El Zohur</option>
+                    <option value="Port Fuad">Port Fuad</option>
+                    <option value="Mubarak East">Mubarak East</option>
+                </optgroup>
+                <optgroup label="Qalyubia" style="display: none;">
+                    <option value="Khanka">Khanka</option>
+                    <option value="Khusus">Khusus</option>
+                    <option value="El Qanater El Khayreya">El Qanater El Khayreya</option>
+                    <option value="El Ubour">El Ubour<option>
+                    <option value="Banha">Banha</option>
+                    <option value="Kafr Shukr">Kafr Shukr</option>
+                    <option value="Qaha">Qaha</option>
+                    <option value="Qalyub">Qalyub</option>
+                    <option value="Shubra El Kheima">Shubra El Kheima</option>
+                    <option value="Shibin El Qanater">Shibin El Qanater</option>
+                    <option value="Tukh">Tukh</option>
+                </optgroup>
+                <optgroup label="Qena" style="display: none;">
+                    <option value="Abu Tesht">Abu Tesht</option>
+                    <option value="El Waqf">El Waqf</option>
+                    <option value="Dishna">Dishna</option>
+                    <option value="Farshut">Farshut<option>
+                    <option value="New Qena">New Qena</option>
+                    <option value="Nag Hammadi">Nag Hammadi</option>
+                    <option value="Naqada">Naqada</option>
+                    <option value="Gebtu">Gebtu</option>
+                    <option value="Qena">Qena</option>
+                    <option value="Qus">Qus</option>
+                </optgroup>
+                <optgroup label="Red Sea" style="display: none;">
+                    <option value="Hurghada">Hurghada</option>
+                    <option value="El Qoseir">El Qoseir</option>
+                    <option value="Shalateen">Shalateen</option>
+                    <option value="Hala'ib">Hala'ib<option>
+                    <option value="Marsa Alam">Marsa Alam</option>
+                    <option value="Ras Gharib">Ras Gharib</option>
+                    <option value="Safaga">Safaga</option>
+                </optgroup>
+                <optgroup label="Sohag" style="display: none;">
+                    <option value="Akhmim">Akhmim</option>
+                    <option value="El Balyana">El Balyana</option>
+                    <option value="El Kawtar">El Kawtar</option>
+                    <option value="El Maragha">El Maragha<option>
+                    <option value="El Munsha">El Munsha</option>
+                    <option value="Aserat">Aserat</option>
+                    <option value="Dar El Salam">Dar El Salam</option>
+                    <option value="Girga">Girga</option>
+                    <option value="Juhaynah West">Juhaynah West</option>
+                    <option value="New Akhmimr">New Akhmim</option>
+                    <option value="New Sohag">New Sohag</option>
+                    <option value="Saqultah">Saqultah</option>
+                    <option value="Sohag">Sohag</option>
+                    <option value="Tahta">Tahta</option>
+                    <option value="Tima">Tima</option>
+                </optgroup>
+                <optgroup label="South Sinai" style="display: none;">
+                    <option value="Abu Radis">Abu Radis</option>
+                    <option value="El Tor">El Tor</option>
+                    <option value="Dahab">Dahab</option>
+                    <option value="Nuweiba">Nuweiba<option>
+                    <option value="Ras Sidr">Ras Sidr</option>
+                    <option value="Saint Catherine">Saint Catherine</option>
+                    <option value="Sharm El Sheikh ">Sharm El Sheikh </option>
+                    <option value="Taba">Taba</option>
+                </optgroup>
+                <optgroup label="Suez" style="display: none;">
+                    <option value="Arbaeen">Arbaeen</option>
+                    <option value="Ganayen">Ganayen</option>
+                    <option value="Suez">Suez</option>
+                    <option value="Attaka">Attaka<option>
+                    <option value="Faisal">Faisal</option>
+                </optgroup>
+      </select>
+     <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-map-marker"></span>
+            </div>
+     </div>
+           
+     
+         
+         
+         
+    
+    
+           <div class="col-sm-5 form-group input-group">
+      <select class="form-control" placeholder="">
+          <span class="glyphicon glyphicon-user"></span>
+          <option disabled selected>Choose Cuisines</option>
+         <option>All Cuisines</option>
+          <option>Italian</option>
+          <option>Mexican </option>
+          <option>Sandwiches</option>
+          <option>Japanese </option>
+          <option>Pizza</option>
+          <option>Chinese</option>
+          <option>Asian</option>
+          <option>Thai</option>
+          <option>Bakery and Cakes</option>
+          <option>Salads</option>
+          <option>International</option>
+          <option>Indian </option>
+          <option>French </option>
+          <option>Seafood</option>
+          <option>Desserts</option>
+          <option>Burgers</option>
+          <option>Fast Food</option>
+          <option>Lebanese </option>
+          <option>Seyami</option>
+          <option>Grills</option>
+          <option>Crepes and Waffles</option>
+          <option>Pasta</option>
+          <option>Breakfast</option>
+          <option>Soups</option>
+          <option>Oriental</option>
+          <option>Pies</option>
+          <option>Greek</option>
+          <option>African</option>
+          <option>Wraps</option>
+          <option>Shawerma</option>
+          <option>Healthy </option>
+          <option>Foul and Falafel</option>
+          <option>Nuts</option>
+          <option>Beverages</option>
+      </select>
+    <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-cutlery"></span>
+            </div>
+    </div>
+         
+    
+         
+         <br><br>
+         <button type="submit" class="btn btn-success">Let's go</button>
+           </div>  
+         </form>
+                      </div>
+                  <!-----end------------------>
+              </div>
+          </div>
+      </section>
+      
+      <!----------end reservation--------------->
+      <!--new section-->
+       <section class="about text-center">
+       <div class="container">
+           <h1>welcome in our new website <SPAN style="font-size:32px;font-family: 'Oleo Script', cursive; color:#727272;">EHGIZ .</SPAN><span style="color:#E41b17; font-weight:bold;font-family: 'Oleo Script', cursive;">Online</span></h1>
+           <p class="lead">We provide the best places in your residential area and offer you a lot of offers, book through us and enjoy the wonderful service.</p>
+           </div>
+       </section>
+       <!--end section-->
+       <!--start end----->
+      <section class="footer">
+          <div class="container">
+          <div class="row">
+              <div class="col-lg-4">
+                  <h3>Sitemap</h3>
+                  <ul class="list-unstyled">
+                  <li><a>Home</a></li>
+                  <li><a>About</a></li>
+                  <li><a>Contact Us</a></li>
+                      
+                  </ul>
+                  <ul class="list-unstyled social-list">
+                  <li><img src="img/social_media/Facebook-128.png"></li>
+                      <li><img src="img/social_media/Youtube-128.png"></li>
+                      <li><img src="img/social_media/Twitter-128.png"></li>
+                      <li><img src="img/social_media/gmail.png"></li>
+                  </ul>
+              </div>
+              <div class="col-lg-4">
+              </div>
+              <div class="col-lg-4">
+              </div>
+              </div>
+          </div>
+          <div class="copy text-center">
+          Copyright &copy; 2019 <a href="#"><SPAN style="font-size:16px; color:#fff;  font-family: 'Oleo Script', cursive;">EHGIZ </SPAN>.<span style="color:#E41b17; font-weight:bold;font-family: 'Oleo Script', cursive;">Online</span></a> 
+          </div>
+      </section>
+      <!----endd-------->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+       <script >
+	    $(function () {
+	        $('#datepicker').datepicker({
+	            format: "dd/mm/yyyy",
+	            autoclose: true,
+	            todayHighlight: true,
+		        showOtherMonths: true,
+		        selectOtherMonths: true,
+		        autoclose: true,
+		        changeMonth: true,
+		        changeYear: true,
+		        orientation: "button",
+                
+	        });
+            $('#datepicker')
+	    });
+	</script>
+   
+    <script src="js/bootstrap.min.js"></script>
+      <script src="js/t_reservation.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+       </body>
+</html>
